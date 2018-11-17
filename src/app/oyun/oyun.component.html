@@ -1,0 +1,49 @@
+
+<div *ngIf='oyun.oyuncular.length==4'>
+	<div>
+		<span *ngIf='oyun.oyuncular[2].numara == oyun.currentOyuncu.numara'> ===></span>
+		<app-el [deste]='oyun.oyuncular[2].el' [oyuncu]='oyun.oyuncular[2]' (at)='at($event)' >
+		</app-el>
+		<span>{{oyun.oyuncular[2].puan}}</span>
+		<br>
+	</div>
+
+	<div>
+	<div style='width: 33%; float:left'>
+		<span *ngIf='oyun.oyuncular[3].numara == oyun.currentOyuncu.numara'> ===></span>
+		<app-el [deste]='oyun.oyuncular[3].el' [oyuncu]='oyun.oyuncular[3]' (at)='at($event)' >
+		</app-el>
+		<span>{{oyun.oyuncular[3].puan}}</span>
+		<br>
+	</div>	
+	<div style='width: 33%; float:left'>
+		Koz:{{oyun.koz.name}}
+		Koz Ciktimi:{{oyun.kozOut}}
+		Tur:{{oyun.tur}}
+
+	<div *ngFor='let atma of oyun.yer.atmalar'>
+
+		{{atma.oyuncu.numara}}:
+		<app-kart [kart]="atma.kart">
+		</app-kart>
+	</div>
+	</div>
+	<div style='width: 33%; float:left'>
+	<div >
+		<span *ngIf='oyun.oyuncular[1].numara == oyun.currentOyuncu.numara'> ===></span>
+		<app-el [deste]='oyun.oyuncular[1].el' [oyuncu]='oyun.oyuncular[1]' (at)='at($event)' >
+		</app-el>
+		<span>{{oyun.oyuncular[1].puan}}</span>
+		<br>
+	</div>
+	</div>
+	</div>
+	<div style="clear: both;">
+		<span *ngIf='oyun.oyuncular[0].numara == oyun.currentOyuncu.numara'> ===></span>
+		<app-el [deste]='oyun.oyuncular[0].el' [oyuncu]='oyun.oyuncular[0]' (at)='at($event)' >
+		</app-el>
+		<span>{{oyun.oyuncular[0].puan}}</span>
+		<br>
+	</div>
+
+</div>
